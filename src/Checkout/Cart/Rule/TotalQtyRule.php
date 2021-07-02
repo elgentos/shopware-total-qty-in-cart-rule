@@ -40,15 +40,6 @@ class TotalQtyRule extends Rule
         }
 
         $goods = $scope->getCart()->getLineItems()->filterGoods();
-        if ($this->filter) {
-            $context = $scope->getSalesChannelContext();
-
-            $goods = $goods->filter(function (LineItem $lineItem) use ($context) {
-                $scope = new LineItemScope($lineItem, $context);
-
-                return $this->filter->match($scope);
-            });
-        }
 
         $totalQty = (int) $goods->reduce(function ($carry, LineItem $lineItem): int {
             $carry += $lineItem->getQuantity();
