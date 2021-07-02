@@ -1,7 +1,6 @@
 {
     "name": "elgentos/shopware-total-qty-in-cart-rule",
     "description": "Elgentos Total Qty In Cart Rule",
-    "version": "v1.0.0",
     "license": "MIT",
     "authors": [
         {
